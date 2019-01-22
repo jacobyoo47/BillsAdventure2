@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private Iusable useable;
     private Animator playerAnim;
     private Rigidbody2D rigidBody;
-    private Vector2 currentCheckpoint;
+    public Vector2 currentCheckpoint;
     private bool isGrounded = true;
     private bool jump = false;
     private bool highJump = false;

@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Use
   - Eagle
+  - Patrol
+  - Possum
   layers:
   - Default
   - TransparentFX
