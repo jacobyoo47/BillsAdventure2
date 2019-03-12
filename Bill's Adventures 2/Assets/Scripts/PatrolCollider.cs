@@ -21,7 +21,7 @@ public class PatrolCollider : MonoBehaviour
         if (collision.gameObject.tag == "Possum")
         {
             collision.gameObject.GetComponent<Possum>().faceRight = !collision.gameObject.GetComponent<Possum>().faceRight;
-            Debug.Log("Patrol2");
+            //Debug.Log("Patrol2");
         }
     }
 }

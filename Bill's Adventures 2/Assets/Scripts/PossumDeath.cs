@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PossumDeath : MonoBehaviour
 {
@@ -20,18 +18,22 @@ public class PossumDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Possum possum = this.GetComponentInParent<Possum>();
-            possum.dead = true;
-
-            Rigidbody2D player_rb = collision.gameObject.GetComponent<Rigidbody2D>();
-
-            Vector2 temp = player_rb.velocity;
-            temp.y = 0;
-            player_rb.velocity = temp;
-            player_rb.velocity += new Vector2(0, 10);
-            if (Input.GetButton("Jump"))
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (!player.isDead)
             {
-                player_rb.velocity += new Vector2(0, 5);
+                Possum possum = this.GetComponentInParent<Possum>();
+                possum.dead = true;
+
+                Rigidbody2D player_rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+                Vector2 temp = player_rb.velocity;
+                temp.y = 0;
+                player_rb.velocity = temp;
+                player_rb.velocity += new Vector2(0, 10);
+                if (Input.GetButton("Jump"))
+                {
+                    player_rb.velocity += new Vector2(0, 5);
+                }
             }
         }
     }

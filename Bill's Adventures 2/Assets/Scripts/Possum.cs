@@ -110,7 +110,7 @@ public class Possum : MonoBehaviour
                 transform.Translate(Vector2.right * speed * .01f);
             }
             faceRight = !faceRight;
-            Debug.Log("Patrol");
+            //Debug.Log("Patrol");
         }
     }
 }
